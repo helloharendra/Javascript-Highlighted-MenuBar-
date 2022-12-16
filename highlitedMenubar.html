@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="JavaScript/jquery-1.10.2.js" type="text/javascript"></script> 
+
+<script type="text/javascript">
+    $(function() {
+        // this will get the full URL at the address bar
+        var url = window.location.href;
+
+        // passes on every "a" tag
+        $(".topmenu a").each(function() {
+            // checks if its the same on the address bar
+            if (url == (this.href)) {
+                $(this).closest("li").addClass("active");
+                //for making parent of submenu active
+               $(this).closest("li").parent().parent().addClass("active");
+            }
+        });
+    });        
+</script>
+</head>
+<body>
+    <div class="topmenu">
+        <ul>
+            <li><a href="Default.aspx">Home</a></li>
+            <li><a href="NewsLetter.aspx">About</a></li>
+            <li><a href="#">Forms</a></li>
+            <li><a href="#">Mail</a></li>
+            <li><a href="#">Service</a></li>
+            <li style="border:none;"><a href="#">HSE</a></li>
+            <li><a href="#">MainMenu2</a>
+           </li>
+        </ul>
+    </div>
+    <style>
+        .topmenu ul li.active a, .topmenu ul li a:hover {
+    text-decoration:none;
+    color:rgb(255, 255, 255);
+    background:rgb(5, 5, 5) no-repeat center top;
+}
+    </style>
+    <script>
+
+    </script>
+</body>
+</html>
